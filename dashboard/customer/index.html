@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | LocalServices</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css1/dashboard.css">
+</head>
+<body class="dashboard customer-dashboard">
+    <!-- Side Navigation -->
+    <nav class="dashboard-sidebar">
+        <div class="user-profile">
+            <img src="../../images/avatars/customer.jpg" alt="Profile" class="avatar">
+            <h3>John Doe</h3>
+            <p>Customer</p>
+        </div>
+        <ul class="nav-menu">
+            <li class="active"><a href="index.html"><i class="icon-home"></i> Dashboard</a></li>
+            <li><a href="bookings.html"><i class="icon-calendar"></i> My Bookings</a></li>
+            <li><a href="payments.html"><i class="icon-credit-card"></i> Payments</a></li>
+            <li><a href="#" id="logout"><i class="icon-logout"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <header class="dashboard-header">
+            <h1>Welcome Back, John</h1>
+            <div class="notification-bell">
+                <span class="badge">3</span>
+                <i class="icon-bell"></i>
+            </div>
+        </header>
+
+        <section class="quick-actions">
+            <button class="action-card" onclick="location.href='../services/cleaning.html'">
+                <i class="icon-broom"></i>
+                <span>Book Cleaning</span>
+            </button>
+            <button class="action-card" onclick="location.href='../services/handyman.html'">
+                <i class="icon-tools"></i>
+                <span>Request Handyman</span>
+            </button>
+        </section>
+
+        <section class="upcoming-bookings">
+            <h2>Upcoming Services</h2>
+            <div class="booking-card">
+                <div class="booking-info">
+                    <h3>Deep Cleaning</h3>
+                    <p><i class="icon-clock"></i> Tomorrow, 10:00 AM</p>
+                    <p><i class="icon-user"></i> Maria S.</p>
+                </div>
+                <button class="btn-outline">View Details</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../js1/dashboard.js"></script>
+</body>
+</html>

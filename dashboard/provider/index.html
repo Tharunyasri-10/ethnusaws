@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Dashboard | LocalServices</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css1/dashboard.css">
+</head>
+<body class="dashboard provider-dashboard">
+    <!-- Side Navigation -->
+    <nav class="dashboard-sidebar">
+        <div class="user-profile">
+            <img src="../../images/avatars/provider.jpg" alt="Profile" class="avatar">
+            <h3>Maria S.</h3>
+            <p>Cleaning Professional</p>
+            <div class="rating">★★★★★ (142 reviews)</div>
+        </div>
+        <ul class="nav-menu">
+            <li class="active"><a href="index.html"><i class="icon-home"></i> Dashboard</a></li>
+            <li><a href="jobs.html"><i class="icon-briefcase"></i> My Jobs</a></li>
+            <li><a href="earnings.html"><i class="icon-dollar"></i> Earnings</a></li>
+            <li><a href="#" id="logout"><i class="icon-logout"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <header class="dashboard-header">
+            <h1>Today's Schedule</h1>
+            <button class="btn" id="availability-toggle">Available</button>
+        </header>
+
+        <section class="today-jobs">
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Deep Cleaning</h3>
+                    <p><i class="icon-clock"></i> 10:00 AM - 12:30 PM</p>
+                    <p><i class="icon-location"></i> 123 Main St, Apt 4B</p>
+                    <div class="customer-info">
+                        <img src="../../images/avatars/customer1.jpg" alt="John D.">
+                        <span>John D.</span>
+                    </div>
+                </div>
+                <div class="job-actions">
+                    <button class="btn">Directions</button>
+                    <button class="btn-outline">Message</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="performance-metrics">
+            <div class="metric-card">
+                <h3>Completed Jobs</h3>
+                <p class="value">142</p>
+            </div>
+            <div class="metric-card">
+                <h3>Earnings</h3>
+                <p class="value">$3,850</p>
+            </div>
+            <div class="metric-card">
+                <h3>Rating</h3>
+                <p class="value">4.9 ★</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../js1/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* Auth Page Specific Styles */
+.auth-page {
+    background: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.auth-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.auth-card .logo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.auth-links a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-login {
+    margin-top: 2rem;
+}
+
+.divider {
+    text-align: center;
+    position: relative;
+    margin: 1.5rem 0;
+    color: #777;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: #ddd;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.social-btn:hover {
+    background: #f9f9f9;
+}
+
+.social-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.hint {
+    color: #666;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .auth-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .social-buttons {
+        flex-direction: column;
+    }
+}

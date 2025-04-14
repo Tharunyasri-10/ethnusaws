@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Services | LocalServices</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LocalServices</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../authorization/login.html">Login</a>
+                <a href="../authorization/register.html" class="btn">Sign Up</a>
+            </div>
+            <div class="mobile-menu-btn">☰</div>
+        </nav>
+    </header>
+
+    <main class="service-page">
+        <div class="service-header">
+            <img src="../images\service\cleaning2.avif">
+            <h1>Cleaning Services</h1>
+            <div class="service-meta">
+                <span class="rating">★★★★☆ (4.2/5)</span>
+                <span class="price">From $25/hour</span>
+            </div>
+        </div>
+
+        <section class="service-details">
+            <div class="details-container">
+                <div class="service-description">
+                    <h2>About Our Cleaning Services</h2>
+                    <p>Professional cleaning services for homes and offices. Our certified cleaners provide:</p>
+                    <ul>
+                        <li>Deep cleaning with eco-friendly products</li>
+                        <li>Regular maintenance cleaning</li>
+                        <li>Move-in/move-out cleaning</li>
+                        <li>Specialized services (carpet, window)</li>
+                        <li>Disinfection services available</li>
+                    </ul>
+                    
+                    <div class="service-features">
+                        <div class="feature">
+                            <span>🕒</span>
+                            <p>Flexible scheduling</p>
+                        </div>
+                        <div class="feature">
+                            <span>✅</span>
+                            <p>Verified professionals</p>
+                        </div>
+                        <div class="feature">
+                            <span>💰</span>
+                            <p>No hidden fees</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form">
+                    <h2>Book a Cleaner</h2>
+                    <form id="cleaning-booking">
+                        <div class="form-group">
+                            <label for="cleaning-type">Service Type</label>
+                            <select id="cleaning-type" required>
+                                <option value="">Select...</option>
+                                <option value="standard">Standard Cleaning ($25/hr)</option>
+                                <option value="deep">Deep Cleaning ($35/hr)</option>
+                                <option value="move">Move Cleaning ($45/hr)</option>
+                                <option value="disinfection">Disinfection ($30/hr)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cleaning-date">Date</label>
+                            <input type="date" id="cleaning-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cleaning-time">Time</label>
+                            <input type="time" id="cleaning-time" required min="09:00" max="18:00">
+                        </div>
+                        <div class="form-group">
+                            <label for="cleaning-hours">Duration (hours)</label>
+                            <input type="number" id="cleaning-hours" min="1" max="8" value="2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cleaning-address">Address</label>
+                            <input type="text" id="cleaning-address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cleaning-notes">Special Instructions</label>
+                            <textarea id="cleaning-notes"></textarea>
+                        </div>
+                        
+                        <div class="price-summary">
+                            <h3>Estimated Total: <span id="cleaning-total">$50</span></h3>
+                            <small>Deposit required to confirm booking</small>
+                        </div>
+                        
+                        <div id="payment-element">
+                            <!-- Stripe Payment Element will be inserted here -->
+                        </div>
+                        
+                        <button type="submit" class="btn" id="submit-booking">
+                            <span class="button-text">Book & Pay Deposit</span>
+                            <span class="spinner hidden" id="spinner"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="provider-gallery">
+                <h2>Available Cleaners</h2>
+                <div class="providers-grid">
+                    <div class="provider-card">
+                        <img src="../images\service\cleaning3.avif">
+                        <div class="provider-meta">
+                            <span class="rating">★★★★★ (142 reviews)</span>
+                            <span class="price">$28/hour</span>
+                        </div>
+                        <p>Specializes in eco-friendly cleaning. Available Mon-Fri.</p>
+                        <button class="btn-outline" onclick="selectProvider('Maria S.')">Select</button>
+                    </div>
+                    <div class="provider-card">
+                        <img src="../images\service\cleaning4.avif" alt="Cleaner John" loading="lazy">
+                        <h3>John T.</h3>
+                        <div class="provider-meta">
+                            <span class="rating">★★★★☆ (89 reviews)</span>
+                            <span class="price">$25/hour</span>
+                        </div>
+                        <p>Move-in/move-out specialist. Available weekends.</p>
+                        <button class="btn-outline" onclick="selectProvider('John T.')">Select</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="rating">★★★★★</span>
+                        <span class="review-date">March 15, 2023</span>
+                    </div>
+                    <p>"Maria did an amazing job cleaning my apartment before move-in. Everything was spotless and smelled fresh!"</p>
+                    <p class="review-author">- Sarah K.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="rating">★★★★☆</span>
+                        <span class="review-date">February 28, 2023</span>
+                    </div>
+                    <p>"Great regular cleaning service. Would give 5 stars if they brought their own supplies. Very thorough otherwise."</p>
+                    <p class="review-author">- Michael R.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="rating">★★★★★</span>
+                        <span class="review-date">January 10, 2023</span>
+                    </div>
+                    <p>"The deep cleaning service was worth every penny. My house hasn't been this clean in years!"</p>
+                    <p class="review-author">- Jennifer L.</p>
+                </div>
+            </div>
+            <button class="btn-outline" id="load-more-reviews">Load More Reviews</button>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="script1.js"></script>
+    <script>
+        // Initialize Stripe
+        const stripe = Stripe('pk_test_your_stripe_publishable_key');
+        let elements;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calculate price when service type changes
+            document.getElementById('cleaning-type').addEventListener('change', calculateTotal);
+            document.getElementById('cleaning-hours').addEventListener('input', calculateTotal);
+            
+            // Initialize payment element
+            initializePayment();
+            
+            // Form submission
+            document.getElementById('cleaning-booking').addEventListener('submit', handleBooking);
+        });
+        
+        function calculateTotal() {
+            const serviceType = document.getElementById('cleaning-type').value;
+            const hours = document.getElementById('cleaning-hours').value;
+            let rate = 25;
+            
+            if (serviceType === 'deep') rate = 35;
+            else if (serviceType === 'move') rate = 45;
+            else if (serviceType === 'disinfection') rate = 30;
+            
+            const total = rate * hours;
+            document.getElementById('cleaning-total').textContent = `$${total}`;
+            return total;
+        }
+        
+        async function initializePayment() {
+            const response = await fetch('/create-payment-intent', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount: calculateTotal() * 100 })
+            });
+            
+            const { clientSecret } = await response.json();
+            
+            elements = stripe.elements({ clientSecret });
+            const paymentElement = elements.create('payment');
+            paymentElement.mount('#payment-element');
+        }
+        
+        async function handleBooking(e) {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById('submit-booking');
+            submitButton.disabled = true;
+            document.getElementById('spinner').classList.remove('hidden');
+            
+            const { error } = await stripe.confirmPayment({
+                elements,
+                confirmParams: {
+                    return_url: 'https://yourdomain.com/booking-confirmed',
+                }
+            });
+            
+            if (error) {
+                alert(error.message);
+                submitButton.disabled = false;
+                document.getElementById('spinner').classList.add('hidden');
+            }
+        }
+        
+        function selectProvider(providerName) {
+            alert(`${providerName} selected! Continue with booking.`);
+        }
+    </script>
+</body>
+</html>

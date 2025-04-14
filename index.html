@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalServices Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LocalServices</div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#services">Services</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="authorization/login.html">Login</a>
+                <a href="authorization/register.html" class="btn">Sign Up</a>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Find Trusted Local Service Providers</h1>
+            <p>Book cleaners, handymen, landscapers and more with just a few clicks</p>
+            <div class="search-bar">
+                <input type="text" placeholder="What service do you need?">
+                <input type="text" placeholder="Your location">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="services-section">
+        <h2>Popular Services</h2>
+        <div class="services-grid">
+            <div class="service-card" onclick="location.href='services/cleaning.html'">
+                <img src="../images\service\cleaning1.avif">
+                <h3>Cleaning Services</h3>
+                <p>From $25/hour</p>
+                <div class="rating">★★★★☆ (128 reviews)</div>
+            </div>
+            <div class="service-card" onclick="location.href='services/handyman.html'">
+                <img src="../images\service\provider.webp">
+                <h3>Handyman Services</h3>
+                <p>From $45/hour</p>
+                <div class="rating">★★★★★ (89 reviews)</div>
+            </div>
+            <div class="service-card" onclick="location.href='services/landscaping.html'">
+                <img src="../images\service\gardener.avif">
+                <h3>Landscaping</h3>
+                <p>From $35/hour</p>
+                <div class="rating">★★★★☆ (64 reviews)</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Search Services</h3>
+                <p>Find the perfect service provider in your area</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Book Instantly</h3>
+                <p>Select time and confirm booking</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Enjoy Service</h3>
+                <p>Provider arrives and completes the job</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Pay Securely</h3>
+                <p>Payment released after job completion</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="urgent-service">
+        <h2>Need Urgent Help?</h2>
+        <p>We connect you with available providers within 1 hour</p>
+        <button class="urgent-btn">Request Urgent Service</button>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 LocalServices Marketplace. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

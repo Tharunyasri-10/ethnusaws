@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscaping Services | LocalServices</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LocalServices</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../authorization/login.html">Login</a>
+                <a href="../authorization/register.html" class="btn">Sign Up</a>
+            </div>
+            <div class="mobile-menu-btn">☰</div>
+        </nav>
+    </header>
+
+    <main class="service-page">
+        <div class="service-header">
+            <img src="../images\service\gardener1.avif">
+            <h1>Landscaping Services</h1>
+            <div class="service-meta">
+                <span class="rating">★★★★☆ (4.3/5)</span>
+                <span class="price">From $35/hour</span>
+            </div>
+        </div>
+
+        <section class="service-details">
+            <div class="details-container">
+                <div class="service-description">
+                    <h2>Beautiful Outdoor Spaces</h2>
+                    <p>Transform your yard with our professional landscaping services:</p>
+                    <ul>
+                        <li>Lawn mowing and maintenance</li>
+                        <li>Hedge trimming and pruning</li>
+                        <li>Garden bed design and planting</li>
+                        <li>Mulching and fertilizing</li>
+                        <li>Irrigation system installation/repair</li>
+                        <li>Seasonal cleanups</li>
+                    </ul>
+                    
+                    <div class="service-features">
+                        <div class="feature">
+                            <span>🌱</span>
+                            <p>Eco-friendly options</p>
+                        </div>
+                        <div class="feature">
+                            <span>📅</span>
+                            <p>Recurring service available</p>
+                        </div>
+                        <div class="feature">
+                            <span>♻️</span>
+                            <p>Yard waste recycling</p>
+                        </div>
+                    </div>
+                    
+                    <div class="seasonal-offer">
+                        <h3>Spring Special!</h3>
+                        <p>Book a full lawn renovation package before May 31st and get 15% off.</p>
+                    </div>
+                </div>
+
+                <div class="booking-form">
+                    <h2>Schedule Landscaping</h2>
+                    <form id="landscaping-booking">
+                        <div class="form-group">
+                            <label for="landscaping-service">Service Type</label>
+                            <select id="landscaping-service" required>
+                                <option value="">Select...</option>
+                                <option value="mowing">Lawn Mowing ($35/hr)</option>
+                                <option value="trimming">Hedge Trimming ($45/hr)</option>
+                                <option value="garden">Garden Bed Service ($50/hr)</option>
+                                <option value="irrigation">Irrigation Work ($60/hr)</option>
+                                <option value="full">Full Service Package ($55/hr)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="property-size">Property Size</label>
+                            <select id="property-size" required>
+                                <option value="">Select...</option>
+                                <option value="small">Small (under 1/4 acre)</option>
+                                <option value="medium">Medium (1/4 to 1/2 acre)</option>
+                                <option value="large">Large (1/2 to 1 acre)</option>
+                                <option value="xlarge">Extra Large (1+ acre)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="landscaping-frequency">Service Frequency</label>
+                            <select id="landscaping-frequency">
+                                <option value="once">One-Time Service</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="biweekly">Bi-Weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="landscaping-date">Preferred Start Date</label>
+                            <input type="date" id="landscaping-date" required>
+                        </div>
+                        
+                        <div class="price-summary">
+                            <h3>Estimated Total: <span id="landscaping-total">$70</span></h3>
+                            <small>Prices vary by property size. Final quote after assessment.</small>
+                        </div>
+                        
+                        <div id="payment-element">
+                            <!-- Stripe Payment Element will be inserted here -->
+                        </div>
+                        
+                        <button type="submit" class="btn" id="submit-booking">
+                            <span class="button-text">Schedule Service</span>
+                            <span class="spinner hidden" id="spinner"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="provider-gallery">
+                <h2>Our Landscapers</h2>
+                <div class="providers-grid">
+                    <div class="provider-card">
+                        <img src="../images\service\gardener2.avif">
+                        <h3>Carlos R.</h3>
+                        <div class="provider-meta">
+                            <span class="rating">★★★★★ (189 reviews)</span>
+                            <span class="price">$40/hour</span>
+                        </div>
+                        <p>Specializes in garden design and maintenance. Bilingual (English/Spanish).</p>
+                        <button class="btn-outline" onclick="selectProvider('Carlos R.')">Select Landscaper</button>
+                    </div>
+                    <div class="provider-card">
+                        <img src="../images\service\gardener3.avif">
+                        <h3>Emily K.</h3>
+                        <div class="provider-meta">
+                            <span class="rating">★★★★☆ (132 reviews)</span>
+                            <span class="price">$35/hour</span>
+                        </div>
+                        <p>Organic gardening expert. Available weekdays.</p>
+                        <button class="btn-outline" onclick="selectProvider('Emily K.')">Select Landscaper</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <h2>Our Work</h2>
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-item">
+                    <img src="../images\service\gardening1.avif">
+                    <p>Custom flower garden installation</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="../images\service\gardening2.avif">
+                    <p>Regular lawn care service</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="rating">★★★★★</span>
+                        <span class="review-date">May 12, 2023</span>
+                    </div>
+                    <p>"Carlos transformed our boring backyard into an oasis. His attention to detail is amazing!"</p>
+                    <p class="review-author">- Thomas W.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="rating">★★★★★</span>
+                        <span class="review-date">April 28, 2023</span>
+                    </div>
+                    <p>"Emily's organic approach saved my struggling garden. Highly recommend her services."</p>
+                    <p class="review-author">- Rachel S.</p>
+                </div>
+            </div>
+            <button class="btn-outline" id="load-more-reviews">Load More Reviews</button>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="script3.js"></script>
+    <script>
+        // Landscaping-specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calculate price when inputs change
+            document.getElementById('landscaping-service').addEventListener('change', calculateLandscapingTotal);
+            document.getElementById('property-size').addEventListener('change', calculateLandscapingTotal);
+            document.getElementById('landscaping-frequency').addEventListener('change', calculateLandscapingTotal);
+            
+            // Initialize payment element
+            initializePayment();
+            
+            // Form submission
+            document.getElementById('landscaping-booking').addEventListener('submit', handleBooking);
+        });
+        
+        function calculateLandscapingTotal() {
+            const serviceType = document.getElementById('landscaping-service').value;
+            const propertySize = document.getElementById('property-size').value;
+            const frequency = document.getElementById('landscaping-frequency').value;
+            
+            let rate = 35;
+            let hours = 2;
+            
+            // Adjust rate by service type
+            if (serviceType === 'trimming') rate = 45;
+            else if (serviceType === 'garden') rate = 50;
+            else if (serviceType === 'irrigation') rate = 60;
+            else if (serviceType === 'full') rate = 55;
+            
+            // Adjust hours by property size
+            if (propertySize === 'medium') hours = 3;
+            else if (propertySize === 'large') hours = 4;
+            else if (propertySize === 'xlarge') hours = 6;
+            
+            // Apply frequency discount
+            let total = rate * hours;
+            if (frequency !== 'once') {
+                total = total * 0.9; // 10% discount for recurring service
+            }
+            
+            document.getElementById('landscaping-total').textContent = `$${total}`;
+            return total;
+        }
+        
+        // Payment functions same as other pages
+        async function initializePayment() {
+            const response = await fetch('/create-payment-intent', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount: calculateLandscapingTotal() * 100 })
+            });
+            
+            const { clientSecret } = await response.json();
+            
+            elements = stripe.elements({ clientSecret });
+            const paymentElement = elements.create('payment');
+            paymentElement.mount('#payment-element');
+        }
+        
+        function selectProvider(providerName) {
+            alert(`${providerName} selected! Their availability will be shown.`);
+            // In real implementation, would update calendar with provider's availability
+        }
+    </script>
+</body>
+</html>
